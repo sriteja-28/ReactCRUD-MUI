@@ -49,13 +49,13 @@ const UserList = () => {
     const [deletedUser, setDeletedUser] = useState(null); 
 
     useEffect(() => {
-        axios.get("http://localhost:3001/users/").then(response => {
+        axios.get("https://reactcrud-mui-backend.onrender.com/users/").then(response => {
             setUsers(response.data);
         });
     }, []);
 
     const deleteUser = (id) => {
-        axios.delete(`http://localhost:3001/users/${id}`).then(response => {
+        axios.delete(`https://reactcrud-mui-backend.onrender.com/users/${id}`).then(response => {
             const deletedUser = users.find(user => user.id === id);
             setUsers(users.filter(user => user.id !== id)); 
             setDeletedUser(deletedUser); 
