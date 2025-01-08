@@ -49,7 +49,7 @@ const UserList = () => {
     const [deletedUser, setDeletedUser] = useState(null); 
 
     useEffect(() => {
-        axios.get("https://react-crud-mui-two.vercel.app/db.json/").then(response => {
+        axios.get("http://localhost:3001/users/").then(response => {
             setUsers(response.data);
         });
     }, []);
