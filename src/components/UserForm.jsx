@@ -70,7 +70,7 @@ const UserForm = () => {
 
     useEffect(() => {
         if (id) {
-            axios.get(`http://localhost:3001/users/${id}`).then(response => {
+            axios.get(`https://reactcrud-mui-backend.onrender.com/users/${id}`).then(response => {
                 setName(response.data.name);
                 setEmail(response.data.email);
             });
@@ -80,7 +80,7 @@ const UserForm = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (id) {
-            axios.put(`http://localhost:3001/users/${id}`, { name, email }).then(() => {
+            axios.put(`https://reactcrud-mui-backend.onrender.com/users/${id}`, { name, email }).then(() => {
                 setAlertVisible(true);
                 setTimeout(() => {
                     setAlertVisible(false);
@@ -90,7 +90,7 @@ const UserForm = () => {
                 console.error("Error updating user:", error);
             });
         } else {
-            axios.post(`http://localhost:3001/users/`, { name, email }).then(() => {
+            axios.post(`https://reactcrud-mui-backend.onrender.com/users/`, { name, email }).then(() => {
                 setAlertVisible(true);
 
                 setTimeout(() => {
